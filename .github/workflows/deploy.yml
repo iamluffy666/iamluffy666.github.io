@@ -6,6 +6,15 @@ on:
   pull_request:
     branches: [ main, master ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -26,11 +35,14 @@ jobs:
     - name: 构建项目
       run: npm run build
       
-    - name: 部署到 GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    - name: 设置 Pages
+      uses: actions/configure-pages@v4
+      
+    - name: 上传构建产物
+      uses: actions/upload-pages-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-        # 由于您的仓库名是 username.github.io，GitHub会自动使用根域名
-        cname: false
+        path: './dist'
+        
+    - name: 部署到 GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

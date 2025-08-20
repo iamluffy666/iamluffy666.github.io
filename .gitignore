@@ -1,0 +1,76 @@
+# 依赖文件夹
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 环境变量文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 构建输出文件夹 (注意：这里注释掉了dist，因为您想要提交dist文件夹)
+# dist/
+# dist-ssr/
+# *.local
+
+# 编辑器和IDE配置文件
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 操作系统生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 日志文件
+logs/
+*.log
+
+# 运行时数据
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# 覆盖测试报告
+coverage/
+*.lcov
+
+# 临时文件
+*.tmp
+*.temp
+
+# 缓存文件
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist/
+
+# Storybook build outputs
+.out/
+.storybook-out/
+
+# Rollup cache
+.rollup.cache/
+
+# Serverless directories
+.serverless/
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test

@@ -18,7 +18,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory('/my_blog/'), // 修改这行，添加base路径
     routes
 })
 

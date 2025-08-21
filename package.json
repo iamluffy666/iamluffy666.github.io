@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "build:gh-pages": "vite build --base=/my_blog/",
+        "build:gh-pages": "vite build --base=",
         "preview": "vite preview",
         "serve": "vite preview"
     },

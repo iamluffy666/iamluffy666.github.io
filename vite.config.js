@@ -4,7 +4,11 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [vue()],
-    base: '', // 修改为空字符串，支持根路径访问
+    base: '/', // 使用正斜杠
+    build: {
+        outDir: 'dist',
+        assetsDir: 'assets'
+    },
     server: {
         port: 3000,
         open: true
